@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <title>Cards | Home</title>
 </head>
 <body>
   <?php

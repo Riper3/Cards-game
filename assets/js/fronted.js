@@ -2,6 +2,7 @@
 
 $(".nav-link").click(function(){
   $(".main-div").hide();
+  document.title = "Cards | "+$(this).text();
   var linkdiv = "#div-"+$(this).text().toLowerCase();
   $(linkdiv).show();
 });
