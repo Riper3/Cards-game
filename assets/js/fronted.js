@@ -16,3 +16,15 @@ $(".hover").hover(function(){
   $(this).css('background-color', '#1a75ff');
   $(this).css('color', 'white');
 });
+
+// Inputs
+
+$("input").focus(function(){
+  $(this).css("background-color", "#1a75ff");
+  $(this).css("color", "white");
+});
+
+$("input").blur(function(){
+  $(this).css("background-color", "#ffffff");
+  $(this).css("color", "black");
+});

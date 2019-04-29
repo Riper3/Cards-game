@@ -2,10 +2,21 @@ body {
   padding: 0px;
   margin: 0px;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
+input {
+  border: 0px;
+}
+
+::placeholder {
+  color: black;
+  text-align: center;
+}
+
 /* Navbar & Footer */
 .navbar, .footer {
   width: 100%;
@@ -45,4 +56,17 @@ a {
 
 #div-game, #div-ranking, #div-login, #div-register {
     display: none;
+}
+/* Register form */
+.input-register, #submit-register {
+  height: 40px;
+  font-size: 24px;
+  margin-left: 40%;
+  margin-top: 80px;
+  text-align: center;
+}
+
+#submit-register {
+  background-color: #1a75ff;
+  width: 300px;
 }
