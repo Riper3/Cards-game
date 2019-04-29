@@ -28,3 +28,18 @@ $("input").blur(function(){
   $(this).css("background-color", "#ffffff");
   $(this).css("color", "black");
 });
+
+// Ajax Register
+$("#submit-register").click(function(){
+  $.ajax({
+      url: 'phpfunctions/registerfunction.php',
+      type: "POST",
+      data: { "username" : $("#new-username").val(),
+              "password" : $("#new-password").val(),
+              "email" : $("#new-email").val()
+            },
+      success: function(reponse) {
+        console.log(reponse);
+      }
+  });
+});
