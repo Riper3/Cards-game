@@ -28,3 +28,13 @@ a {
 .nav-login {
   float: right;
 }
+/* Main div */
+.main-div {
+  width: 100%;
+  min-height: 600px;
+  background-color: green;
+}
+
+#div-game, #div-ranking, #div-login, #div-register {
+    display: none;
+}
