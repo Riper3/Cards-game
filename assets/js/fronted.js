@@ -30,6 +30,7 @@ $("input").blur(function(){
 });
 
 // Ajax Register
+
 $("#submit-register").click(function(){
   $.ajax({
       url: 'phpfunctions/registerfunction.php',
@@ -45,7 +46,14 @@ $("#submit-register").click(function(){
 });
 
 //Game options
+
 $(".game-time").click(function(){
   $(".game-time").hide();
   $(".game-difficulty").show();
+  if($(this).text() == "Time trial") {
+    $("#time-value").val(2);
+  }
+  else {
+    $("#time-value").val(1);
+  }
 });

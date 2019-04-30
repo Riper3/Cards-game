@@ -93,3 +93,7 @@ input {
   line-height: 100px;
   margin-top: 70px;
 }
+
+.game-input {
+  display: none;
+}
