@@ -43,3 +43,9 @@ $("#submit-register").click(function(){
       }
   });
 });
+
+//Game options
+$(".game-time").click(function(){
+  $(".game-time").hide();
+  $(".game-difficulty").show();
+});

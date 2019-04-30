@@ -52,6 +52,7 @@ input {
   width: 100%;
   min-height: 600px;
   background-color: green;
+  overflow: auto;
 }
 
 #div-game, #div-ranking, #div-login, #div-register {
@@ -69,4 +70,26 @@ input {
 #submit-register {
   background-color: #1a75ff;
   width: 300px;
+}
+/* Game */
+.game-time, .game-difficulty {
+  width: 30%;
+  margin: auto;
+  font-size: 24px;
+  text-align: center;
+  background-color: #1a75ff;
+  color: white;
+}
+
+.game-time {
+  height: 120px;
+  line-height: 120px;
+  margin-top: 120px;
+}
+
+.game-difficulty {
+  display: none;
+  height: 100px;
+  line-height: 100px;
+  margin-top: 70px;
 }
