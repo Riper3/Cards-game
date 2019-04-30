@@ -15,3 +15,4 @@
 </body>
 <script src="assets/js/jquery-3.4.0.min.js"></script>
 <script src="assets/js/fronted.js"></script>
+<script src="assets/js/game.js"></script>

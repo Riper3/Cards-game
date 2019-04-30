@@ -71,7 +71,7 @@ input {
   background-color: #1a75ff;
   width: 300px;
 }
-/* Game */
+/* Options game */
 .game-time, .game-difficulty {
   width: 30%;
   margin: auto;
@@ -94,6 +94,17 @@ input {
   margin-top: 70px;
 }
 
-.game-input {
+#time-value {
   display: none;
+}
+
+/* Game */
+
+.game-card {
+  width: 7.5%;
+  height: 100px;
+  display: inline-block;
+  margin-left: 2%;
+  margin-top: 2%;
+  background-color: red;
 }

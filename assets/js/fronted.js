@@ -50,6 +50,7 @@ $("#submit-register").click(function(){
 $(".game-time").click(function(){
   $(".game-time").hide();
   $(".game-difficulty").show();
+  
   if($(this).text() == "Time trial") {
     $("#time-value").val(2);
   }
