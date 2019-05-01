@@ -30,5 +30,12 @@ $(".game-difficulty").click(function(){
 $("div").on("click", ".game-card", function(){
   var number = $(this).attr('id').match(/\d+/)[0];
 
-  $(this).css("background-image", "url("+images[number]+")");
+  var image = '"'+images[number]+'"';
+  $(this).css("background-image", "url("+image+")");
+
+  var clicked = $(".game-card[style*='background-image: url("+image+")']");
+  if(clicked.length === 2) {
+    clicked.css("background-image", "");
+    clicked.css('visibility', 'hidden');
+  }
 });
