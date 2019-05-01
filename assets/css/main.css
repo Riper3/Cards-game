@@ -106,5 +106,8 @@ input {
   display: inline-block;
   margin-left: 2%;
   margin-top: 2%;
-  background-color: red;
+  background-image: url("../images/card.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }

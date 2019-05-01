@@ -1,3 +1,5 @@
+var images = [];
+
 $(".game-difficulty").click(function(){
   $(".game-difficulty").hide();
 
@@ -11,7 +13,22 @@ $(".game-difficulty").click(function(){
     var hard = 1;
   }
 
+  var z = 0;
+
   for (var i = 0; i < 40; i++) {
-    $("#div-game").append("<div class='game-card'></div>");
+    $("#div-game").append("<div class='game-card' id=card"+i+"></div>");
+
+    images[i] = "assets/images/cats/cat"+z+".jpg";
+    z++;
+
+    if(z >= 10) {
+      z = 0;
+    }
   }
+});
+
+$("div").on("click", ".game-card", function(){
+  var number = $(this).attr('id').match(/\d+/)[0];
+
+  $(this).css("background-image", "url("+images[number]+")");
 });
