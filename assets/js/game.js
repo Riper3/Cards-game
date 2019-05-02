@@ -26,7 +26,18 @@ $(".game-difficulty").click(function(){
       z = 0;
     }
   }
+
+  // Mix cards
+  for (var i = 0; i < 40; i++) {
+    var firstnumber = Math.floor(Math.random() * 39);
+    var secondnumber = Math.floor(Math.random() * 39);
+
+    if(firstnumber != secondnumber) {
+      $("#card"+firstnumber).before($("#card"+secondnumber));
+    }
+  }
 });
+
 // Game
 var clicksnumber = 0;
 var firstclicked;
