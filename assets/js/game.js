@@ -44,23 +44,47 @@ var firstclicked;
 
 $("div").on("click", ".game-card", function(){
   ++clicksnumber;
-  var number = $(this).attr('id').match(/\d+/)[0];
 
-  var image = '"'+images[number]+'"';
-  $(this).css("background-image", "url("+image+")");
-
-  var clicked = $(".game-card[style*='background-image: url("+image+")']");
-  if(clicked.length == 2 && clicksnumber == 2) {
-    clicked.css("background-image", "");
-    clicked.css('visibility', 'hidden');
-    clicksnumber = 0;
-  }
-  else if(clicksnumber == 2) {
-    clicked.css("background-image", "url('assets/images/card.png')");
-    firstclicked.css("background-image", "url('assets/images/card.png')");
-    clicksnumber = 0;
-  }
-  else if(clicksnumber == 1) {
+  if(clicksnumber == 1) {
     firstclicked = $(this);
   }
+
+  $(".game-card").css("pointer-events", "none");
+
+  // Get the number by id
+  var number = $(this).attr('id').match(/\d+/)[0];
+  var image = '"'+images[number]+'"';
+
+  $(this).fadeTo("fast", 0, function(){
+    $(this).css("background-image", "url("+image+")");
+    $(this).fadeTo("fast", 1, function(){
+
+      // This is because you can choose the time with 1 card
+      if(clicksnumber == 2) {
+        var time = 1000;
+      }
+      else {
+        var time = 0;
+      }
+
+      // Time to watch the cards
+      setTimeout(function(){
+        var clicked = $(".game-card[style*='background-image: url("+image+")']");
+        if(clicked.length == 2 && clicksnumber == 2) {
+          clicked.fadeTo("fast", 0, function(){
+            clicked.css("background-image", "");
+            clicked.addClass('game-card-clicled').removeClass('game-card');
+          });
+          clicksnumber = 0;
+        }
+        else if(clicksnumber == 2) {
+          clicked.css("background-image", "url('assets/images/card.png')");
+          firstclicked.css("background-image", "url('assets/images/card.png')");
+          clicksnumber = 0;
+        }
+
+        $(".game-card").css("pointer-events", "auto");
+      }, time);
+    });
+  });
 });

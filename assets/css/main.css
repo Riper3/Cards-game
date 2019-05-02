@@ -100,12 +100,15 @@ input {
 
 /* Game */
 
-.game-card {
+.game-card, .game-card-clicled {
   width: 7.5%;
   height: 100px;
   display: inline-block;
   margin-left: 2%;
   margin-top: 2%;
+}
+
+.game-card {
   background-image: url("../images/card.png");
   background-repeat: no-repeat;
   background-size: contain;
