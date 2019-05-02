@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="icon" href="assets/images/card.png" />
   <title>Cards | Home</title>
 </head>
 <body>

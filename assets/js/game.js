@@ -28,7 +28,7 @@ $(".game-difficulty").click(function(){
   }
 
   // Mix cards
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < 100; i++) {
     var firstnumber = Math.floor(Math.random() * 39);
     var secondnumber = Math.floor(Math.random() * 39);
 
