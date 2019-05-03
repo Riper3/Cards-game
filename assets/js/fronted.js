@@ -5,6 +5,19 @@ $(".nav-link").click(function(){
   document.title = "Cards | "+$(this).text();
   var linkdiv = "#div-"+$(this).text().toLowerCase();
   $(linkdiv).show();
+
+  //Remove errors from register div
+  if($(this).text() != "Register") {
+    $(".error-register").remove();
+  }
+
+  //Reset game
+  if($(this).text() != "Game") {
+    $(".game-card").remove();
+    $(".game-card-clicled").remove();
+    $("#game-end").hide();
+    $(".game-time").show();
+  }
 });
 
 // Hover
