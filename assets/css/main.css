@@ -69,8 +69,20 @@ input {
 
 #submit-register {
   background-color: #1a75ff;
+  color: white;
   width: 300px;
 }
+
+.error-register {
+  position: absolute;
+  width: 300px;
+  left: 40%;
+  display: none;
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 /* Options game */
 .game-time, .game-difficulty {
   width: 30%;
