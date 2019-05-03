@@ -114,3 +114,42 @@ input {
   background-size: contain;
   background-position: center;
 }
+
+#game-end {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #1a75ff;
+  display: none;
+  z-index: 2;
+}
+
+#game-end-user, #game-end-difficulty {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  margin-top: 5%;
+}
+
+#game-end-user, #game-end-nots {
+  float: left;
+  left: 10%;
+}
+
+#game-end-difficulty, #game-end-save {
+  float: right;
+  right: 10%;
+}
+
+.game-end {
+  position: absolute;
+  display: inline-block;
+  margin-top: 170px;
+  height: 80px;
+  width: 30%;
+  line-height: 80px;
+  text-align: center;
+  font-size: 20px;
+}

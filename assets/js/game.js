@@ -74,6 +74,12 @@ $("div").on("click", ".game-card", function(){
           clicked.fadeTo("fast", 0, function(){
             clicked.css("background-image", "");
             clicked.addClass('game-card-clicled').removeClass('game-card');
+
+            // Win game
+            if($(".game-card-clicled").length == 2) {
+              $(".game-card-clicled").remove();
+              $("#game-end").fadeIn("fast");
+            }
           });
           clicksnumber = 0;
         }
