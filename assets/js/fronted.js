@@ -98,7 +98,12 @@ $("#submit-register").click(function(){
                 "email" : email.val()
               },
         success: function(reponse) {
-          console.log(reponse);
+          $(".nav-login").hide();
+          $(".nav-loged").show();
+          $("#nav-username").text(reponse);
+          $("#div-register").hide();
+          $("#div-welcome").show();
+          $("#welcome-username").text(reponse);
         }
     });
   }

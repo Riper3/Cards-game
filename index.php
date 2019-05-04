@@ -11,6 +11,7 @@
   require_once "elements/ranking.php";
   require_once "elements/register.php";
   require_once "elements/login.php";
+  require_once "elements/welcome.php";
   require_once "elements/footer.php";
    ?>
 </body>

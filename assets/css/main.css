@@ -28,7 +28,7 @@ input {
   cursor: default;
 }
 
-.nav-element, .nav-login {
+.nav-element, .nav-login, .nav-loged {
   width: 12%;
   display: inline-block;
   font-size: 30px;
@@ -44,8 +44,12 @@ input {
   float: left;
 }
 
-.nav-login {
+.nav-login, .nav-loged {
   float: right;
+}
+
+.nav-loged {
+  display: none;
 }
 /* Main div */
 .main-div {
@@ -81,6 +85,19 @@ input {
   color: red;
   font-size: 22px;
   font-weight: bold;
+}
+
+/* Welcome */
+#welcome-username {
+  font-weight: bold;
+}
+
+.welcome-text {
+  margin: auto;
+  margin-top: 5%;
+  font-size: 18px;
+  color: white;
+  text-align: center;
 }
 
 /* Options game */
