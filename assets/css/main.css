@@ -59,11 +59,11 @@ input {
   overflow: auto;
 }
 
-#div-game, #div-ranking, #div-login, #div-register {
+#div-game, #div-ranking, #div-login, #div-register, #div-welcome {
     display: none;
 }
-/* Register form */
-.input-register, #submit-register {
+/* Register form and login form */
+.input-register, .input-login, #submit-register, #submit-login {
   height: 40px;
   font-size: 24px;
   margin-left: 40%;
@@ -71,13 +71,13 @@ input {
   text-align: center;
 }
 
-#submit-register {
+#submit-register, #submit-login {
   background-color: #1a75ff;
   color: white;
   width: 300px;
 }
 
-.error-register {
+.error-register, #error-login {
   position: absolute;
   width: 300px;
   left: 40%;
@@ -85,6 +85,10 @@ input {
   color: red;
   font-size: 22px;
   font-weight: bold;
+}
+
+#error-login {
+  top: 340px;
 }
 
 /* Welcome */

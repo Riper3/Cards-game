@@ -11,6 +11,11 @@ $(".nav-link").click(function(){
     $(".error-register").remove();
   }
 
+  //Remove errors from login linkdiv
+  if($(this).text() != "Login") {
+    $("#error-login").remove();
+  }
+
   //Reset game
   if($(this).text() != "Game") {
     $(".game-card").remove();
@@ -93,8 +98,8 @@ $("#submit-register").click(function(){
     $.ajax({
         url: 'phpfunctions/registerfunction.php',
         type: "POST",
-        data: { "username" : username.val(),
-                "password" : password.val(),
+        data: { "usern" : username.val(),
+                "userp" : password.val(),
                 "email" : email.val()
               },
         success: function(reponse) {
@@ -109,7 +114,32 @@ $("#submit-register").click(function(){
   }
 });
 
-// Log logOut
+// Log In
+$("#submit-login").click(function(){
+  $("#error-login").remove();
+  $.ajax({
+      url: 'phpfunctions/loginfunction.php',
+      type: "POST",
+      data: { "username" : $("#login-username").val(),
+              "password" : $("#login-password").val(),
+            },
+      success: function(reponse) {
+        if(reponse != "error") {
+          $(".nav-login").hide();
+          $(".nav-loged").show();
+          $("#nav-username").text(reponse);
+          $("#div-login").hide();
+          $("#div-home").show();
+        }
+        else {
+          var msg = $("<span id='error-login'></span>").appendTo("body");
+          msg.text("Username or password wrong");
+          msg.show();
+        }
+      }
+  });
+});
+// Log Out
 $("#nav-logout").click(function(){
   $.ajax({
       url: 'phpfunctions/logoutfunction.php',
