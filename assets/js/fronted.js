@@ -85,7 +85,6 @@ $("#submit-register").click(function(){
     var msg = $("<span class='error-register'></span>").appendTo("body");
     msg.css("top", $("#new-"+errors[i].key).offset().top + 45);
     msg.text(errors[i].text);
-    console.log(msg);
     msg.show();
   }
 

@@ -1,11 +1,16 @@
 <?php
 function newUser($username, $password, $email) {
   require "bbddfunctions/insertarray.php";
+  require "loginfunction.php";
 
   $user = array('username' => $username, 'password' => $password, 'email' => $email);
-  insertArray('users', $user);
+  $userid = insertArray('users', $user);
 
-  return "Ok";
+  $user["userId"] = $userid;
+
+  logIn($user);
+
+  return $_SESSION["username"];
 }
 
 if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {

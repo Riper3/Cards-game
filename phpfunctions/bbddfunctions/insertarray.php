@@ -9,7 +9,10 @@ function insertArray($table, $array) {
   $sql = "INSERT INTO $table ($columns) VALUES ('$values')";
   $conn->query($sql);
 
+  $id = $conn->insert_id;
   unset($sql);
 
   $conn->close();
+
+  return $id;
 }
