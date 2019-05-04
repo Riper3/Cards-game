@@ -109,6 +109,19 @@ $("#submit-register").click(function(){
   }
 });
 
+// Log logOut
+$("#nav-logout").click(function(){
+  $.ajax({
+      url: 'phpfunctions/logoutfunction.php',
+      type: "POST",
+      success: function(reponse) {
+        $(".nav-loged").hide();
+        $(".nav-login").show();
+        $("#nav-username").text("User");
+      }
+  });
+});
+
 //Game options
 
 $(".game-time").click(function(){
