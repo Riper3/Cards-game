@@ -1,16 +1,31 @@
 var images = [];
+var time = 1;
+var hard = "Normal";
+//Game options
+
+$(".game-time").click(function(){
+  $(".game-time").hide();
+  $(".game-difficulty").show();
+
+  if($(this).text() == "Time trial") {
+    time = 2;
+  }
+  else {
+    time = 1;
+  }
+});
 
 $(".game-difficulty").click(function(){
   $(".game-difficulty").hide();
 
   if($(this).text() == "Hard") {
-    var hard = 3;
+    hard = "Hard";
   }
   else if($(this).text() == "Normal") {
-    var hard = 2;
+    hard = "Normal";
   }
   else {
-    var hard = 1;
+    hard = "Easy";
   }
 
   // Cards generator
@@ -77,6 +92,8 @@ $("div").on("click", ".game-card", function(){
 
             // Win game
             if($(".game-card-clicled").length == 2) {
+              $("#game-end-user").text($("#nav-username").text());
+              $("#game-end-difficulty").text("Difficulty: "+hard);
               $(".game-card-clicled").remove();
               $("#game-end").fadeIn("fast");
             }

@@ -127,10 +127,6 @@ input {
   margin-top: 70px;
 }
 
-#time-value {
-  display: none;
-}
-
 /* Game */
 
 .game-card, .game-card-clicled {
