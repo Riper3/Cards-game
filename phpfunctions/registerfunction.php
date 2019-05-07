@@ -1,16 +1,17 @@
 <?php
 function newUser($usern, $userp, $email) {
-  require_once "bbddfunctions/insertarray.php";
+  require_once "../config/bbdd.php";
   require_once "loginfunction.php";
 
-  $user = array('username' => $usern, 'password' => $userp, 'email' => $email);
-  $userid = insertArray('users', $user);
+  $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
 
-  $user["userId"] = $userid;
+  $stmt->bind_param("sss", $usern, $userp, $email);
+  $stmt->execute();
+  $stmt->close();
 
-  logIn($user["username"], $user["password"]);
+  logIn($usern, $userp);
 
-  return $_SESSION["username"];
+  return $usern;
 }
 
 if(isset($_POST["usern"]) && isset($_POST["userp"]) && isset($_POST["email"])) {
