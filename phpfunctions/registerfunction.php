@@ -3,9 +3,10 @@ function newUser($usern, $userp, $email) {
   require_once "../config/bbdd.php";
   require_once "loginfunction.php";
 
-  $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+  $passw = password_hash($userp, PASSWORD_DEFAULT);
 
-  $stmt->bind_param("sss", $usern, $userp, $email);
+  $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+  $stmt->bind_param("sss", $usern, $passw, $email);
   $stmt->execute();
   $stmt->close();
 

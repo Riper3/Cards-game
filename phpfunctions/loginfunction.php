@@ -2,13 +2,13 @@
 function logIn($usern, $userp) {
   require "../config/bbdd.php";
 
-  $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-  $stmt->bind_param("ss", $usern, $userp);
+  $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+  $stmt->bind_param("s", $usern);
   $stmt->execute();
   $user = $stmt->get_result()->fetch_assoc();
   $stmt->close();
 
-  if(!empty($user)) {
+  if(!empty($user) && password_verify($userp, $user["password"])) {
     session_start();
 
     $_SESSION["userId"] = $user["userId"];

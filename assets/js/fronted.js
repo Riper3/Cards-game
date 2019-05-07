@@ -70,7 +70,7 @@ $("#submit-register").click(function(){
     errors[error] = {"key":"password", "text":"The password is required"};
     error++;
   }
-  else if(password.val().length <= 6) {
+  else if(password.val().length <= 5) {
     errors[error] = {"key":"password", "text":"The password should have at least 6 characters"};
     error++;
   }
