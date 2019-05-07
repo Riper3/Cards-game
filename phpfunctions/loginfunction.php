@@ -1,8 +1,12 @@
 <?php
 function logIn($usern, $userp) {
-  require_once "bbddfunctions/checklogin.php";
+  require "../config/bbdd.php";
 
-  $user = checkLogin($usern, $userp);
+  $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+  $stmt->bind_param("ss", $usern, $userp);
+  $stmt->execute();
+  $user = $stmt->get_result()->fetch_assoc();
+  $stmt->close();
 
   if(!empty($user)) {
     session_start();
