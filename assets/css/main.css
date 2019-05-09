@@ -152,6 +152,7 @@ input {
   margin-top: 100px;
   background-color: #1a75ff;
   display: none;
+  color: white;
   z-index: 2;
 }
 

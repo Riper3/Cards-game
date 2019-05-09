@@ -1,3 +1,11 @@
+function endGame() {
+  $(".game-card").remove();
+  $(".game-card-clicled").remove();
+  $("#game-end").hide();
+  $(".game-difficulty").hide();
+  $(".game-time").show();
+}
+
 // Change div
 
 $(".nav-link").click(function(){
@@ -18,10 +26,7 @@ $(".nav-link").click(function(){
 
   //Reset game
   if($(this).text() != "Game") {
-    $(".game-card").remove();
-    $(".game-card-clicled").remove();
-    $("#game-end").hide();
-    $(".game-time").show();
+    endGame();
   }
 });
 

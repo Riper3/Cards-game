@@ -111,3 +111,7 @@ $("div").on("click", ".game-card", function(){
     });
   });
 });
+
+$("#game-end-nots").click(function(){
+  endGame();
+});
