@@ -10,6 +10,7 @@ function logIn($usern, $userp) {
 
   if(!empty($user) && password_verify($userp, $user["password"])) {
     session_start();
+    setcookie(session_name(),session_id(),time()+7200);
 
     $_SESSION["userId"] = $user["userId"];
     $_SESSION["username"] = $user["username"];

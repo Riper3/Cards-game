@@ -1,6 +1,7 @@
 var images = [];
-var time = 1;
-var hard = "Normal";
+var timetrial = 0;
+var difficulty = "Normal";
+var totaltime = 0;
 //Game options
 
 $(".game-time").click(function(){
@@ -8,10 +9,10 @@ $(".game-time").click(function(){
   $(".game-difficulty").show();
 
   if($(this).text() == "Time trial") {
-    time = 2;
+    timetrial = 1;
   }
   else {
-    time = 1;
+    timetrial = 0;
   }
 });
 
@@ -19,13 +20,13 @@ $(".game-difficulty").click(function(){
   $(".game-difficulty").hide();
 
   if($(this).text() == "Hard") {
-    hard = "Hard";
+    difficulty = "Hard";
   }
   else if($(this).text() == "Normal") {
-    hard = "Normal";
+    difficulty = "Normal";
   }
   else {
-    hard = "Easy";
+    difficulty = "Easy";
   }
 
   // Cards generator
@@ -93,7 +94,7 @@ $("div").on("click", ".game-card", function(){
             // Win game
             if($(".game-card-clicled").length == 2) {
               $("#game-end-user").text($("#nav-username").text());
-              $("#game-end-difficulty").text("Difficulty: "+hard);
+              $("#game-end-difficulty").text("Difficulty: "+difficulty);
               $(".game-card-clicled").remove();
               $("#game-end").fadeIn("fast");
             }
@@ -112,6 +113,21 @@ $("div").on("click", ".game-card", function(){
   });
 });
 
+// End options
 $("#game-end-nots").click(function(){
   endGame();
+});
+
+$("#game-end-save").click(function(){
+  $.ajax({
+      url: 'phpfunctions/saverecordfunction.php',
+      type: "POST",
+      data: { "difficulty" : difficulty,
+              "timetrial" : timetrial,
+              "totaltime" : totaltime
+            },
+      success: function(reponse) {
+        endGame();
+      }
+  });
 });
