@@ -10,7 +10,6 @@
     <span id="game-end-user">Guest</span>
     <span id="game-end-difficulty"></span>
     <span id="game-end-time"></span>
-    <span id="game-end-trys"></span>
     <div class="game-end hover" id="game-end-nots">Don't save</div>
     <div class="game-end hover" id="game-end-save">Save record</div>
   </div>

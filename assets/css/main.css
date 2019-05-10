@@ -156,27 +156,29 @@ input {
   z-index: 2;
 }
 
-#game-end-user, #game-end-difficulty {
+#game-end-user, #game-end-difficulty, #game-end-time{
   position: absolute;
   color: white;
   font-size: 20px;
-  margin-top: 5%;
+  top: 40px;
+}
+
+#game-end-time {
+  left: 35%;
 }
 
 #game-end-user, #game-end-nots {
-  float: left;
   left: 10%;
 }
 
 #game-end-difficulty, #game-end-save {
-  float: right;
   right: 10%;
 }
 
 .game-end {
   position: absolute;
   display: inline-block;
-  margin-top: 170px;
+  top: 170px;
   height: 80px;
   width: 30%;
   line-height: 80px;

@@ -2,6 +2,7 @@ var images = [];
 var timetrial = 0;
 var difficulty = "Normal";
 var totaltime = 0;
+var timeinterval;
 //Game options
 
 $(".game-time").click(function(){
@@ -52,6 +53,10 @@ $(".game-difficulty").click(function(){
       $("#card"+firstnumber).before($("#card"+secondnumber));
     }
   }
+
+  timeinterval = setInterval(function () {
+  ++totaltime;
+  }, 1000);
 });
 
 // Game
@@ -93,6 +98,8 @@ $("div").on("click", ".game-card", function(){
 
             // Win game
             if($(".game-card-clicled").length == 2) {
+              clearInterval(timeinterval);
+              $("#game-end-time").text("Time: "+totaltime+"s");
               $("#game-end-user").text($("#nav-username").text());
               $("#game-end-difficulty").text("Difficulty: "+difficulty);
               $(".game-card-clicled").remove();
