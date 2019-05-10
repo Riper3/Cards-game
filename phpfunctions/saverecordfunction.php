@@ -2,6 +2,7 @@
 function newRecord($difficulty, $timetrial, $totaltime) {
   require_once "../config/bbdd.php";
 
+  session_name("login");
   session_start();
 
   $stmt = $conn->prepare("INSERT INTO records (username, userId, difficulty, timetrial, totaltime) VALUES (?, ?, ?, ?, ?)");

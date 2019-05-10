@@ -1,5 +1,10 @@
 <?php
 
-setcookie("login",session_id(),time()-7200);
+session_name("login");
+session_start();
 
+session_unset();
 session_destroy();
+
+unset($_COOKIE['login']);
+setcookie("login", "",time()-7200, "/");

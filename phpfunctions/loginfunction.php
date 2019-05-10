@@ -9,8 +9,9 @@ function logIn($usern, $userp) {
   $stmt->close();
 
   if(!empty($user) && password_verify($userp, $user["password"])) {
+    session_name("login");
+    session_set_cookie_params(7200,"/");
     session_start();
-    setcookie("login",session_id(),time()+7200);
 
     $_SESSION["userId"] = $user["userId"];
     $_SESSION["username"] = $user["username"];
