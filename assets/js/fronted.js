@@ -42,6 +42,7 @@ $(".nav-link").click(function(){
 
           $.each(ranking, function(index) {
             var row = $("#ranking-row").clone();
+            row.removeAttr('id');
             row.addClass("ranking-row");
 
             row.children(".ranking-username").text(ranking[index].username);
