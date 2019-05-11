@@ -28,6 +28,36 @@ $(".nav-link").click(function(){
   if($(this).text() != "Game") {
     endGame();
   }
+
+  //Refresh the ranking
+  if($(this).text() == "Ranking") {
+    $.ajax({
+        url: 'phpfunctions/rankingfunction.php',
+        type: "POST",
+        data: { "refresh" : 1
+              },
+        success: function(reponse) {
+          var ranking = $.parseJSON(reponse);
+
+          $.each(ranking, function(index) {
+            var row = $("#ranking-row").clone();
+            row.addClass("ranking-row");
+
+            row.children(".ranking-username").text(ranking[index].username);
+            row.children(".ranking-difficulty").text(ranking[index].difficulty);
+            row.children(".ranking-totaltime").text(ranking[index].totaltime);
+            row.children(".ranking-trialtime").text(ranking[index].trailtime);
+
+            if(index != 0) {
+              row.insertAfter(".ranking-row:last");
+            }
+            else {
+              row.insertAfter("#ranking-row");
+            }
+          });
+        }
+    });
+  }
 });
 
 // Hover
