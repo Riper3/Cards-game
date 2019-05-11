@@ -31,6 +31,7 @@ $(".nav-link").click(function(){
 
   //Refresh the ranking
   if($(this).text() == "Ranking") {
+    $(".ranking-row").remove();
     $.ajax({
         url: 'phpfunctions/rankingfunction.php',
         type: "POST",
@@ -46,7 +47,7 @@ $(".nav-link").click(function(){
             row.children(".ranking-username").text(ranking[index].username);
             row.children(".ranking-difficulty").text(ranking[index].difficulty);
             row.children(".ranking-totaltime").text(ranking[index].totaltime);
-            row.children(".ranking-trialtime").text(ranking[index].trailtime);
+            row.children(".ranking-trialtime").text(ranking[index].timetrial);
 
             if(index != 0) {
               row.insertAfter(".ranking-row:last");
