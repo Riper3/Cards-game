@@ -56,7 +56,7 @@ input {
   overflow: auto;
 }
 
-#div-game, #div-ranking, #div-login, #div-register, #div-welcome {
+#div-game, #div-ranking, #div-login, #div-register, #div-welcome, #div-username {
     display: none;
 }
 /* Register form and login form */
@@ -212,10 +212,22 @@ input {
   overflow: auto;
   background-color: #1a75ff;
   color: white;
+  display: inline-block;
 }
 
 .profile-option {
   width: 90%;
   margin: 20px 5% 20px 5%;
   font-size: 20px;
+}
+
+.profile-div {
+  display: none;
+  min-height: 600px;
+  width: 70%;
+  overflow: auto;
+}
+
+#section-profile {
+  display: inline-block;
 }

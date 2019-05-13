@@ -7,13 +7,17 @@ function endGame() {
 }
 
 // Change div
-
 $(".nav-link").click(function(){
   $(".main-div").hide();
   var div = $(this).attr("id").split("-")[1];
   document.title = "Cards | " + div.charAt(0).toUpperCase() + div.slice(1);
-  $("#div-" + div).show();
 
+  if(div == "username") {
+    $("#div-" + div).css('display', 'flex');
+  }
+  else {
+    $("#div-" + div).show();
+  }
 
   //Remove errors from register div
   if(div != "register") {
@@ -63,8 +67,14 @@ $(".nav-link").click(function(){
   }
 });
 
-// Hover
+// Change profile section
+$(".profile-option").click(function(){
+  $(".profile-div").hide();
+  var section = $(this).attr("id").split("-")[1];
+  $("#section-"+section).css('display', 'inline-block');
+});
 
+// Hover
 $(".hover").hover(function(){
   $(this).css('background-color', 'white');
   $(this).css('color', 'black');
@@ -73,8 +83,16 @@ $(".hover").hover(function(){
   $(this).css('color', 'white');
 });
 
-// Inputs
+// Hover menu profile
+$(".profile-option").hover(function(){
+  $(this).css("font-weight", "Bold");
+  $(this).css('color', 'black');
+}, function(){
+  $(this).css("font-weight", "");
+  $(this).css('color', 'white');
+});
 
+// Inputs
 $("input").focus(function(){
   $(this).css("background-color", "#1a75ff");
   $(this).css("color", "white");
