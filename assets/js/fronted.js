@@ -142,6 +142,7 @@ $("#submit-register").click(function(){
               },
         success: function(reponse) {
           $(".nav-login").hide();
+          $("#nav-username").addClass("nav-link");
           $(".nav-loged").show();
           $("#nav-username").text(reponse);
           $("#div-register").hide();
@@ -164,6 +165,7 @@ $("#submit-login").click(function(){
       success: function(reponse) {
         if(reponse != "error") {
           $(".nav-login").hide();
+          $("#nav-username").addClass("nav-link");
           $(".nav-loged").show();
           $("#nav-username").text(reponse);
           $("#div-login").hide();
@@ -184,6 +186,7 @@ $("#nav-logout").click(function(){
       type: "POST",
       success: function(reponse) {
         $(".nav-loged").hide();
+        $("#nav-username").removeClass("nav-link");
         $(".nav-login").show();
         $("#nav-username").text("User");
       }

@@ -8,12 +8,12 @@
       session_start();  ?>
       <div class="nav-login nav-link hover" id="nav-login" style="display:none;">Login</div>
       <div class="nav-login nav-link hover" id="nav-register" style="display:none;">Register</div>
-      <div class="nav-loged hover" id="nav-logout">Log out</div>
-      <div class="nav-loged hover" id="nav-username"><?= $_SESSION["username"]; ?></div>
+      <div class="nav-loged hover" id="nav-logout">Logout</div>
+      <div class="nav-loged nav-link hover" id="nav-username"><?= $_SESSION["username"]; ?></div>
     <?php else : ?>
       <div class="nav-login nav-link hover" id="nav-login">Login</div>
       <div class="nav-login nav-link hover" id="nav-register">Register</div>
-      <div class="nav-loged hover" id="nav-logout" style="display:none;">Log out</div>
+      <div class="nav-loged hover" id="nav-logout" style="display:none;">Logout</div>
       <div class="nav-loged hover" id="nav-username" style="display:none;">Guest</div>
     <?php endif; ?>
   </div>

@@ -204,3 +204,18 @@ input {
   font-size: 18px;
   color: white;
 }
+
+/* Profile menu */
+#profile-menu {
+  min-height: 600px;
+  width: 30%;
+  overflow: auto;
+  background-color: #1a75ff;
+  color: white;
+}
+
+.profile-option {
+  width: 90%;
+  margin: 20px 5% 20px 5%;
+  font-size: 20px;
+}
