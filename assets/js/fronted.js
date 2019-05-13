@@ -10,27 +10,28 @@ function endGame() {
 
 $(".nav-link").click(function(){
   $(".main-div").hide();
-  document.title = "Cards | "+$(this).text();
-  var linkdiv = "#div-"+$(this).text().toLowerCase();
-  $(linkdiv).show();
+  var div = $(this).attr("id").split("-")[1];
+  document.title = "Cards | " + div.charAt(0).toUpperCase() + div.slice(1);
+  $("#div-" + div).show();
+
 
   //Remove errors from register div
-  if($(this).text() != "Register") {
+  if(div != "register") {
     $(".error-register").remove();
   }
 
   //Remove errors from login linkdiv
-  if($(this).text() != "Login") {
+  if(div != "login") {
     $("#error-login").remove();
   }
 
   //Reset game
-  if($(this).text() != "Game") {
+  if(div != "game") {
     endGame();
   }
 
   //Refresh the ranking
-  if($(this).text() == "Ranking") {
+  if(div == "ranking") {
     $(".ranking-row").remove();
     $.ajax({
         url: 'phpfunctions/rankingfunction.php',
