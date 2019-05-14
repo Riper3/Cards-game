@@ -7,7 +7,7 @@ function endGame() {
 }
 
 // Change div
-$(".nav-link").click(function(){
+$(document.body).on('click', '.nav-link' ,function(){
   $(".main-div").hide();
   var div = $(this).attr("id").split("-")[1];
   document.title = "Cards | " + div.charAt(0).toUpperCase() + div.slice(1);
